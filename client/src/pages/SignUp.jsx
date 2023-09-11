@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import OAuth from "../components/OAuth";
-import Spinner from "../components/Spinner.jsx";
+import Spinner from "../components/Spinner";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 function SignUp() {
     const [data, setData] = useState({
         userName: "",
@@ -12,7 +13,6 @@ function SignUp() {
     const navigate = useNavigate();
     const { userName, email, pass } = data;
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
     function onChange(e) {
         setData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
     }
@@ -27,9 +27,10 @@ function SignUp() {
         let js = await response.json();
         setLoading(false);
         if (js.success == false) {
-            setError(true);
+            toast.dismiss();
+            toast.error("Oops!!");
         } else {
-            setError(false);
+            toast.success("Sign Up Successful");
             navigate("/");
         }
     }
@@ -56,7 +57,6 @@ function SignUp() {
                         </Link>
                     </p>
                 </form>
-                <p className="text-red-600 text-sm font-medium mt-2"> {error && "Something went wrong!!"} </p>
             </div>
         </>
     );

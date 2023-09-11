@@ -1,9 +1,12 @@
 import { MoonLoader } from "react-spinners";
+
 function spinner() {
     return (
-        <div className="flex  justify-center absolute items-center top-0 right-0 left-0 bottom-0 z-1 ">
-            <MoonLoader />{" "}
-        </div>
+        <>
+            <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center z-1">
+                <MoonLoader />{" "}
+            </div>
+        </>
     );
 }
 

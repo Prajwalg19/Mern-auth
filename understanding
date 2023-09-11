@@ -1,0 +1,4 @@
+index.js - the main file in the nodejs environment.
+api - this folder has all the connections between each other 
+|_models - this contains the structure definition of the database and it's collections
+|_
