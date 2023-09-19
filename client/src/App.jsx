@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import SignIn from "./pages/SignIn";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Spinner from "./components/Spinner";
 function App() {
     return (
         <>
