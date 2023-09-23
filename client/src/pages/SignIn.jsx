@@ -11,7 +11,7 @@ function SignIn() {
     const dispatch = useDispatch();
     // const [loading, setLoading] = useState(null);
     const { isLoading } = useSelector((store) => {
-        return store.firstSlice; //gets the state of the firstSlice
+        return store.user; //gets the state of the firstSlice
     });
     const [data, setData] = useState({
         email: "",
